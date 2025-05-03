@@ -1,0 +1,82 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Base styles */
+body {
+  @apply font-sans text-gray-900 bg-gray-50;
+}
+
+/* Container class for consistent width */
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 1440px;
+}
+
+/* Responsive typography */
+h1 {
+  @apply text-4xl font-bold sm:text-5xl;
+}
+
+h2 {
+  @apply text-3xl font-bold sm:text-4xl;
+}
+
+h3 {
+  @apply text-2xl font-bold sm:text-3xl;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-dark;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-primary hover:text-white;
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+}
+
+/* Forms */
+.input {
+  @apply block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary;
+}
+
+/* Navigation */
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+}
+
+/* Responsive grid */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+/* Add to your global CSS */
+.whatsapp-agent-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.whatsapp-agent-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.whatsapp-agent-exit {
+  opacity: 1;
+}
+.whatsapp-agent-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
+}
