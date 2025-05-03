@@ -62,7 +62,7 @@ const Navbar = () => {
                 { path: '', label: 'Déconnexion', action: handleLogout },
             ]
             : [
-                { path: '/products', label: 'Produits' },
+                { path: '/categories', label: 'Produits' },
                 { path: '/login', label: 'Connexion' },
                 { path: '/register', label: 'Inscription' },
             ]),
