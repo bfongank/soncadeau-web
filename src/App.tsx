@@ -25,6 +25,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ThankYouPage from './pages/ThankYouPage';
 import OrderDetailsPage from './pages/OrderDetailsPage';
+import NotFoundPage from './pages/404';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/faq" element={<FAQPage />} />
+              <Route path="*" element={<NotFoundPage />} />
               <Route path="/admin" element={<AdminLayout />}>
                 <Route path="products" element={<AllProductsPage />} />
                 <Route path="orders" element={<AllOrdersPage />} />

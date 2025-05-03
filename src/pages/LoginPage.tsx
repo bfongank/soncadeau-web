@@ -37,7 +37,7 @@ const LoginPage = () => {
     }
   };
 
-  // Animation variants
+  // Variantes d'animation
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -86,7 +86,7 @@ const LoginPage = () => {
       >
         <motion.div variants={itemVariants}>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Connectez-vous à votre compte
           </h2>
         </motion.div>
 
@@ -125,7 +125,7 @@ const LoginPage = () => {
           >
             <div>
               <label htmlFor="email-address" className="sr-only">
-                Email address
+                Adresse email
               </label>
               <motion.input
                 id="email-address"
@@ -134,7 +134,7 @@ const LoginPage = () => {
                 autoComplete="email"
                 required
                 className="input input-bordered w-full"
-                placeholder="Email address"
+                placeholder="Adresse email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 whileFocus={{ scale: 1.01 }}
@@ -142,7 +142,7 @@ const LoginPage = () => {
             </div>
             <div>
               <label htmlFor="password" className="sr-only">
-                Password
+                Mot de passe
               </label>
               <motion.input
                 id="password"
@@ -151,7 +151,7 @@ const LoginPage = () => {
                 autoComplete="current-password"
                 required
                 className="input input-bordered w-full"
-                placeholder="Password"
+                placeholder="Mot de passe"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 whileFocus={{ scale: 1.01 }}
@@ -172,13 +172,13 @@ const LoginPage = () => {
                 whileTap={{ scale: 0.95 }}
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                Remember me
+                Se souvenir de moi
               </label>
             </div>
 
             <div className="text-sm">
               <Link to="/forgot-password" className="font-medium text-pink-600 hover:text-pink-500">
-                Forgot your password?
+                Mot de passe oublié ?
               </Link>
             </div>
           </motion.div>
@@ -198,9 +198,9 @@ const LoginPage = () => {
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  Signing in...
+                  Connexion...
                 </motion.span>
-              ) : 'Sign in'}
+              ) : 'Se connecter'}
             </button>
           </motion.div>
         </motion.form>
@@ -209,7 +209,7 @@ const LoginPage = () => {
           variants={itemVariants}
           className="divider text-center"
         >
-          OR
+          OU
         </motion.div>
 
         <motion.div 
@@ -236,7 +236,7 @@ const LoginPage = () => {
                 d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
               ></path>
             </svg>
-            Sign in with Google
+            Se connecter avec Google
           </button>
         </motion.div>
 
@@ -245,12 +245,12 @@ const LoginPage = () => {
           className="text-center"
         >
           <p className="text-sm text-gray-600">
-            Don't have an account?{' '}
+            Pas de compte ?{' '}
             <Link 
               to="/register" 
               className="font-medium text-pink-600 hover:text-pink-500"
             >
-              Sign up
+              S'inscrire
             </Link>
           </p>
         </motion.div>

@@ -37,11 +37,11 @@ const RegisterPage = () => {
 
     try {
       if (formData.phone && !/^[\d\s+-]+$/.test(formData.phone)) {
-        throw new Error('Please enter a valid phone number');
+        throw new Error('Veuillez entrer un numéro de téléphone valide');
       }
 
       if (formData.birthday && !/^\d{4}-\d{2}-\d{2}$/.test(formData.birthday)) {
-        throw new Error('Please enter birthday in YYYY-MM-DD format');
+        throw new Error('Veuillez entrer la date au format AAAA-MM-JJ');
       }
 
       const userCredential = await createUserWithEmailAndPassword(
@@ -62,7 +62,7 @@ const RegisterPage = () => {
         phone: formData.phone,
         birthday: formData.birthday,
         createdAt: new Date().toISOString(),
-        role: 'customer'
+        role: 'client'
       });
 
       navigate('/');
@@ -93,7 +93,7 @@ const RegisterPage = () => {
     }
   };
 
-  // Animation variants
+  // Variantes d'animation
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -142,7 +142,7 @@ const RegisterPage = () => {
       >
         <motion.div variants={itemVariants}>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create a new account
+            Créer un nouveau compte
           </h2>
         </motion.div>
 
@@ -178,7 +178,7 @@ const RegisterPage = () => {
           <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                First Name
+                Prénom
               </label>
               <input
                 id="name"
@@ -187,14 +187,14 @@ const RegisterPage = () => {
                 autoComplete="given-name"
                 required
                 className="input input-bordered w-full"
-                placeholder="First Name"
+                placeholder="Prénom"
                 value={formData.name}
                 onChange={handleChange}
               />
             </div>
             <div>
               <label htmlFor="surname" className="block text-sm font-medium text-gray-700 mb-1">
-                Last Name
+                Nom
               </label>
               <input
                 id="surname"
@@ -203,7 +203,7 @@ const RegisterPage = () => {
                 autoComplete="family-name"
                 required
                 className="input input-bordered w-full"
-                placeholder="Last Name"
+                placeholder="Nom"
                 value={formData.surname}
                 onChange={handleChange}
               />
@@ -212,7 +212,7 @@ const RegisterPage = () => {
 
           <motion.div variants={itemVariants}>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email address
+              Adresse email
             </label>
             <input
               id="email"
@@ -221,7 +221,7 @@ const RegisterPage = () => {
               autoComplete="email"
               required
               className="input input-bordered w-full"
-              placeholder="Email address"
+              placeholder="Adresse email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -229,7 +229,7 @@ const RegisterPage = () => {
 
           <motion.div variants={itemVariants}>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-              Password
+              Mot de passe
             </label>
             <input
               id="password"
@@ -238,7 +238,7 @@ const RegisterPage = () => {
               autoComplete="new-password"
               required
               className="input input-bordered w-full"
-              placeholder="Password"
+              placeholder="Mot de passe"
               value={formData.password}
               onChange={handleChange}
             />
@@ -247,7 +247,7 @@ const RegisterPage = () => {
           <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">
-                City
+                Ville
               </label>
               <input
                 id="city"
@@ -256,14 +256,14 @@ const RegisterPage = () => {
                 autoComplete="address-level2"
                 required
                 className="input input-bordered w-full"
-                placeholder="City"
+                placeholder="Ville"
                 value={formData.city}
                 onChange={handleChange}
               />
             </div>
             <div>
               <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
-                Country
+                Pays
               </label>
               <select
                 id="country"
@@ -274,18 +274,18 @@ const RegisterPage = () => {
                 value={formData.country}
                 onChange={handleChange}
               >
-                <option value="">Select Country</option>
-                <option value="Cameroon">Cameroon</option>
+                <option value="">Sélectionnez un pays</option>
+                <option value="Cameroon">Cameroun</option>
                 <option value="France">France</option>
-                <option value="USA">United States</option>
-                <option value="Germany">Germany</option>
+                <option value="USA">États-Unis</option>
+                <option value="Germany">Allemagne</option>
               </select>
             </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <label htmlFor="street" className="block text-sm font-medium text-gray-700 mb-1">
-              Street Address
+              Adresse
             </label>
             <input
               id="street"
@@ -294,7 +294,7 @@ const RegisterPage = () => {
               autoComplete="street-address"
               required
               className="input input-bordered w-full"
-              placeholder="Street and house number"
+              placeholder="Rue et numéro"
               value={formData.street}
               onChange={handleChange}
             />
@@ -303,7 +303,7 @@ const RegisterPage = () => {
           <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number
+                Téléphone
               </label>
               <input
                 id="phone"
@@ -319,7 +319,7 @@ const RegisterPage = () => {
             </div>
             <div>
               <label htmlFor="birthday" className="block text-sm font-medium text-gray-700 mb-1">
-                Birthday
+                Date de naissance
               </label>
               <input
                 id="birthday"
@@ -344,7 +344,7 @@ const RegisterPage = () => {
               className="btn btn-primary w-full"
               disabled={loading}
             >
-              {loading ? 'Creating account...' : 'Create Account'}
+              {loading ? 'Création du compte...' : 'Créer un compte'}
             </button>
           </motion.div>
         </motion.form>
@@ -353,7 +353,7 @@ const RegisterPage = () => {
           variants={itemVariants}
           className="divider text-center"
         >
-          OR
+          OU
         </motion.div>
 
         <motion.div 
@@ -380,7 +380,7 @@ const RegisterPage = () => {
                 d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
               ></path>
             </svg>
-            Sign up with Google
+            S'inscrire avec Google
           </button>
         </motion.div>
 
@@ -389,12 +389,12 @@ const RegisterPage = () => {
           className="text-center pt-4"
         >
           <p className="text-sm text-gray-600">
-            Already have an account?{' '}
+            Vous avez déjà un compte ?{' '}
             <Link 
               to="/login" 
               className="font-medium text-pink-600 hover:text-pink-500"
             >
-              Sign in
+              Se connecter
             </Link>
           </p>
         </motion.div>
